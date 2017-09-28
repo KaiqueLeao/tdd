@@ -14,10 +14,8 @@ public class Avaliador {
 			if(lance.getValor() > maiorDeTodos) maiorDeTodos = lance.getValor();
 			if(lance.getValor() < menorDeTodos ) menorDeTodos = lance.getValor();
 		}
-	}
-	
-	public void mediaLeilao(Leilao leilao){
-		double media = leilao.getLances().stream().mapToDouble(Integer::valor).average().orElse(0.0);
+		
+		media = leilao.getLances().stream().mapToDouble(p -> p.getValor()).average().getAsDouble();
 	}
 	
 	public double getMenorDeTodos() {
